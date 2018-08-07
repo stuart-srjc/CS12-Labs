@@ -1,2 +1,2 @@
-# CS12-Lab1
-Hello World
+# CS12-Labs
+This repository is for downloading the labs for CS-12
