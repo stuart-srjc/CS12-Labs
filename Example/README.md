@@ -1,2 +1,3 @@
-# CS12-Labs
-This repository is for downloading the labs for CS-12
+# CS12-Lab Example
+
+This repository is for downloading the Example lab for CS-12
