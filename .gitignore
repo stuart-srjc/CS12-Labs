@@ -1,0 +1,5 @@
+*.o
+*.lst
+HelloWorld/helloWorld
+move/move
+Example/example
