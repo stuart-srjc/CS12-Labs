@@ -5,5 +5,5 @@ helloWorld.o: helloWorld.s
 	as --gstabs helloWorld.s -o helloWorld.o
 
 clean:
-	rm helloWorld
-	rm helloWorld.o 
+	rm -f helloWorld
+	rm -f helloWorld.o 
