@@ -146,7 +146,7 @@ _start:
   ```
 
 ### printMSG
-#### print the message associated with the value in RAX
+#### print the message associated with the value in RDI
 ##### 0	 0XA (ENDL)
 ##### 1	 MOV
 ##### 2	 ADD
@@ -175,8 +175,12 @@ global _start
 
 _start:
 
-    mov rax, 0x1
+    mov rdi, 0x1
     call printMSG
+  ```
+ output:
+  ```
+  MOV
   ```
 
 ### exitNormal
