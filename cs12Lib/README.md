@@ -147,19 +147,21 @@ _start:
 
 ### printMSG
 #### print the message associated with the value in RDI
-##### 0	 0XA (ENDL)
-##### 1	 MOV
-##### 2	 ADD
-##### 3  SUB
-##### 4  MUL
-##### 5  DIV
-##### 6  Signed
-##### 7  Unsigned
-##### 8  ' ' (SPACE)
-##### 9  RAX
-##### 10 RBX
-##### 11 RCX
-##### 12 RDX
+##### 0x0 0XA (ENDL)
+##### 0x1 MOV
+##### 0x2 ADD
+##### 0x3  SUB
+##### 0x4  MUL
+##### 0x5  DIV
+##### 0x6  Signed
+##### 0x7  Unsigned
+##### 0x8  ' ' (SPACE)
+##### 0x9  RAX
+##### 0xA RBX
+##### 0xB RCX
+##### 0xC RDX
+##### 0xD CS12
+
 
 
 example:
