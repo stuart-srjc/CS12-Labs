@@ -22,7 +22,7 @@ _start:
   ```
   output:
   ```
-  1234567890abcd
+  0x1234567890abcd
   ```
   
 ### printRAX
@@ -45,7 +45,7 @@ _start:
   ```
     output:
   ```
-  1234567890abcd
+  0x1234567890abcd
   ```
 
 ### printRBX
@@ -68,7 +68,7 @@ _start:
  ```
   output:
   ```
-  1234567890abcd
+  0x1234567890abcd
   ```
 
 ### printRCX
@@ -91,7 +91,7 @@ _start:
   ```
   output:
   ```
-  1234567890abcd
+  0x1234567890abcd
   ```
   
 ### printRDX
@@ -114,7 +114,7 @@ _start:
   ```
   output:
   ```
-  1234567890abcd
+  0x1234567890abcd
   ```
 
 ### printABCD
@@ -139,10 +139,10 @@ _start:
   ```
   output:
   ```
-  AAAA
-  BBBB
-  CCCC
-  DDDD
+  0x000000000000AAAA
+  0x000000000000BBBB
+  0x000000000000CCCC
+  0x000000000000DDDD
   ```
 
 ### printMSG
