@@ -1,8 +1,19 @@
-echo creating ../$1
-mkdir ../$1
+if [ $# -eq 1 ] && [ ! -d "../$1" ]
+then
+    echo creating ../$1
+    mkdir ../$1
 
-echo creating $1.asm
-cp ./template.asm ../$1/$1.asm
+    echo creating $1.asm
+    cp ./template.asm ../$1/$1.asm
 
-echo copying Makefile
-sed "s/template/$1/g" Makefile > ../$1/Makefile
+    echo copying Makefile
+    sed "s/template/$1/g" Makefile > ../$1/Makefile
+
+else
+    echo
+    echo usage:
+    echo ./createProject projectName
+    echo "    where projectName is the name of the directory to create"
+    echo "    and the projectName directory does not exist"
+    echo
+fi
