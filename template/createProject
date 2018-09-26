@@ -1,0 +1,8 @@
+echo creating ../$1
+mkdir ../$1
+
+echo creating $1.asm
+cp ./template.asm ../$1/$1.asm
+
+echo copying Makefile
+sed "s/template/$1/g" Makefile > ../$1/Makefile
