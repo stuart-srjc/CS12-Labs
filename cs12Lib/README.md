@@ -147,9 +147,9 @@ _start:
 
 ### printMSG
 #### print the message associated with the value in RDI
-##### 0x0 0XA (ENDL)
-##### 0x1 MOV
-##### 0x2 ADD
+##### 0x0  0XA (ENDL)
+##### 0x1  MOV
+##### 0x2  ADD
 ##### 0x3  SUB
 ##### 0x4  MUL
 ##### 0x5  DIV
@@ -157,12 +157,18 @@ _start:
 ##### 0x7  Unsigned
 ##### 0x8  ' ' (SPACE)
 ##### 0x9  RAX
-##### 0xA RBX
-##### 0xB RCX
-##### 0xC RDX
-##### 0xD CS12
-
-
+##### 0xA  RBX
+##### 0xB  RCX
+##### 0xC  RDX
+##### 0xD  CS12
+##### 0xE  AND
+##### 0xF  OR
+##### 0x10 XOR
+##### 0x11 NOT
+##### 0x12 SHIFT
+##### 0x13 ROTATE
+##### 0x14 LEFT
+##### 0x15 RIGHT
 
 example:
  ```
@@ -183,6 +189,54 @@ _start:
  output:
   ```
   MOV
+  ```
+
+
+### printEndl
+#### print the endline character
+
+example:
+ ```
+; Data
+section 	.data
+extern printEndl
+
+; Code 
+section		.text
+	
+global _start
+
+_start:
+
+    call printEndl
+  ```
+ output:
+  ```
+  
+  ```
+
+
+### printSpace
+#### print a space character
+
+example:
+ ```
+; Data
+section 	.data
+extern printSpace
+
+; Code 
+section		.text
+	
+global _start
+
+_start:
+
+    call printSpace
+  ```
+ output:
+  ```
+   
   ```
 
 ### exitNormal
