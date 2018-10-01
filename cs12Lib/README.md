@@ -3,16 +3,16 @@ This library is needed for some of the labs for CS-12
 
 ## Exported Functions:
 * [printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printreg)
-* [printRAX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRAX)
-* [printRBX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRBX)
-* [printRCX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRCX)
-* [printRDX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRDX)
-* [printABCD](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printABCD)
-* [printMSG](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printMSG)
-* [printSpace](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printSpace)
+* [printRAX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrax)
+* [printRBX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrbx)
+* [printRCX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrcx)
+* [printRDX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrdx)
+* [printABCD](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printabcd)
+* [printMSG](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printmsg)
+* [printSpace](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printspace)
 * [printEndl](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printendl)
-* [getQuad](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getQuad)
-* [call exitNormal](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#exitNormal)
+* [getQuad](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getquad)
+* [exitNormal](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#exitnormal)
 
 
 
