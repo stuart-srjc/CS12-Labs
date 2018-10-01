@@ -2,6 +2,10 @@
 This library is needed for some of the labs for CS-12
 
 ## Exported Functions:
+[printRBX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrbx)
+
+
+
 ### printReg
 #### print the value in the RDI register
 example: 
