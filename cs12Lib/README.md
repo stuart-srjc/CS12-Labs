@@ -2,10 +2,8 @@
 This library is needed for some of the labs for CS-12
 
 ## Exported Functions:
-[printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printReg)
-
-[printRAX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRAX)
-
+*[printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printReg)
+*[printRAX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRAX)
 [printRBX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRBX)
 [printRCX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRCX)
 [printRDX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printRDX)
