@@ -183,6 +183,7 @@ _start:
 ##### 0x13 ROTATE
 ##### 0x14 LEFT
 ##### 0x15 RIGHT
+##### 0x15 "Enter up to a quadword in hex: example:ABCDEF1234567890"
 
 example:
  ```
@@ -252,6 +253,40 @@ _start:
   ```
    
   ```
+### getQuad
+```
+; Data
+section 	.data
+extern printMSG
+extern printRAX
+extern printEndl
+extern getQuad
+extern exitNormal
+
+; Code 
+section		.text
+
+global _start
+_start:
+	; output message to user to input a Quad Word
+	mov rdi, 0x16
+	call printMSG
+	call printEndl	; endline
+	
+	; get a 16byte entry from the user that represents a quadword
+	call getQuad
+	call printRAX ; print the result
+	
+	call	exitNormal
+ ```
+ 
+ output:
+  ```
+Enter up to a quadword in hex: example:ABCDEF12345678
+123456abcd
+0x000000123456ABCD
+```
+
 
 ### exitNormal
 #### Exit to Linux with returning 0
