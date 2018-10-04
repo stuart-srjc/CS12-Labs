@@ -34,20 +34,22 @@ example:
 ; Data
 section 	.data
 extern printReg
+extern exitNormal
 
 ; Code 
 section		.text
-	
+   
 global _start
 
 _start:
 
-	mov rdi, 0x1234567890ABCD
-	call printReg
+   mov rdi, 0x1234567890abcd
+   call printReg
+   call exitNormal
   ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
   
 ### printRAX
@@ -67,10 +69,11 @@ global _start
 _start:
 	mov rax, 0x1234567890ABCD
 	call printRAX
+	call exitNormal
   ```
     output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
 
 ### printRBX
@@ -80,6 +83,7 @@ example:
 ; Data
 section 	.data
 extern printRBX
+extern exitNormal
 
 ; Code 
 section		.text
@@ -90,10 +94,11 @@ _start:
 
 	mov rbx, 0x1234567890ABCD
 	call printRBX
+	call exitNormal
  ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
 
 ### printRCX
@@ -103,6 +108,7 @@ example:
 ; Data
 section 	.data
 extern printRCX
+extern exitNormal
 
 ; Code 
 section		.text
@@ -113,10 +119,11 @@ _start:
 
 	mov rcx, 0x1234567890ABCD
 	call printRCX
+	call exitNormal
   ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
   
 ### printRDX
@@ -126,6 +133,7 @@ example:
 ; Data
 section 	.data
 extern printRDX
+extern exitNormal
 
 ; Code 
 section		.text
@@ -136,10 +144,12 @@ _start:
 
 	mov rdx, 0x1234567890ABCD
 	call printRDX
+	call exitNormal
   ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD:w
+  
   ```
 
 ### printABCD
@@ -149,6 +159,7 @@ example:
 ; Data
 section 	.data
 extern printABCD
+extern exitNormal
 
 ; Code 
 section		.text
@@ -161,6 +172,7 @@ _start:
 	mov rcx, 0xCCCC
 	mov rdx, 0xDDDD
 	call printABCD
+	call exitNormal
   ```
   output:
   ```
@@ -201,6 +213,7 @@ example:
 ; Data
 section 	.data
 extern printMSG
+extern exitNormal
 
 ; Code 
 section		.text
@@ -211,8 +224,9 @@ _start:
 
     mov rdi, 0x1
     call printMSG
+    call exitNormal
   ```
- output:
+ output: (No Carriage Return / Line Feed)
   ```
   MOV
   ```
@@ -226,6 +240,7 @@ example:
 ; Data
 section 	.data
 extern printEndl
+extern exitNormal
 
 ; Code 
 section		.text
@@ -235,8 +250,9 @@ global _start
 _start:
 
     call printEndl
+    call exitNormal
   ```
- output:
+ output: (A blank Line)
   ```
   
   ```
@@ -250,6 +266,7 @@ example:
 ; Data
 section 	.data
 extern printSpace
+extern exitNormal
 
 ; Code 
 section		.text
@@ -259,8 +276,9 @@ global _start
 _start:
 
     call printSpace
+    call exitNormal
   ```
- output:
+ output: (a space, but no return)
   ```
    
   ```
@@ -394,4 +412,4 @@ _start:
 
 	call exitNormal
   ```
-
+output:  (None, but you will not get a Segmentation fault)
