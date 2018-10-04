@@ -2,16 +2,27 @@
 This library is needed for some of the labs for CS-12
 
 ## Exported Functions:
-* [printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printreg)
+
+Output Functions
+* [printByteArray](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printbytearray)
+* [printEndl](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printendl)
+* [printMSG](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printmsg)
+* [printSpace](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printspace)
+
+
+Output Register Functions
+* [printABCD](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printabcd)
 * [printRAX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrax)
 * [printRBX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrbx)
 * [printRCX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrcx)
 * [printRDX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrdx)
-* [printABCD](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printabcd)
-* [printMSG](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printmsg)
-* [printSpace](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printspace)
-* [printEndl](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printendl)
+* [printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printreg)
+
+Input Functions
+* [getByteArray](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getbytearray)
 * [getQuad](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getquad)
+
+Exit Function
 * [exitNormal](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#exitnormal)
 
 
@@ -254,6 +265,9 @@ _start:
    
   ```
 ### getQuad
+#### get a Quad Word from the user and put the result in RAX
+#### the user will type in characters 0-9,a-f,A-F. 
+#### this will be translated into a quad word and put in the RAX Register
 ```
 ; Data
 section 	.data
@@ -287,6 +301,81 @@ Enter up to a quadword in hex: example:ABCDEF12345678
 0x000000123456ABCD
 ```
 
+### getByteArray
+#### bytes are placed in memory starting at the address pointed to by the RSI Register
+#### the number of bytes read into memory is the value in RDX
+```
+; Data
+section 	.data
+extern getByteArray
+extern printByteArray
+extern printEndl
+extern exitNormal
+array	 	db	"Input 16 bytes  "
+numberOfBytes	dq	0x10
+
+
+; Code 
+section		.text
+
+global _start
+_start:
+
+	; printByteArray 
+	mov rsi, array	 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; print this many bytes of the array, value not address
+	call printByteArray		; print the array
+	call printEndl
+	
+	; getByteArray 
+	mov rsi, array	 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; get this many bytes of the array, value not address
+	call getByteArray		; get the array
+	
+	; printByteArray 
+	mov rsi, array	 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; print this many bytes of the array, value not address
+	call printByteArray		; print the array
+	call printEndl
+	
+	call	exitNormal
+```
+```
+Input 16 bytes  
+abcdefghijklmnop
+abcdefghijklmnop
+```
+
+### printByteArray
+#### bytes are printed to the screen as they are read from memory starting at the address pointed to by the RSI Register
+#### the number of bytes read into memory is the value in RDX
+```
+; Data
+section 	.data
+extern printByteArray
+extern printEndl
+extern exitNormal
+arrayToPrint	db	"Print This Array"
+numberOfBytes	dq	0x10
+
+; Code 
+section		.text
+
+global _start
+_start:
+	; printByteArray 
+	mov rsi, arrayToPrint 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; print this many bytes of the array, value not address
+	call printByteArray		; print the array
+	
+	call printEndl
+	call	exitNormal
+```
+ 
+output:
+```
+Print This Array
+```
 
 ### exitNormal
 #### Exit to Linux with returning 0
