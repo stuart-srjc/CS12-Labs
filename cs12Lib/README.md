@@ -2,45 +2,65 @@
 This library is needed for some of the labs for CS-12
 
 ## Exported Functions:
-* [printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printreg)
+
+Output Functions
+* [printByteArray](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printbytearray)
+* [printEndl](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printendl)
+* [printMSG](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printmsg)
+* [printSpace](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printspace)
+
+
+Output Register Functions
+* [printABCD](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printabcd)
 * [printRAX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrax)
 * [printRBX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrbx)
 * [printRCX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrcx)
 * [printRDX](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printrdx)
-* [printABCD](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printabcd)
-* [printMSG](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printmsg)
-* [printSpace](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printspace)
-* [printEndl](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printendl)
+* [printReg](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#printreg)
+
+Input Functions
+* [getByteArray](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getbytearray)
 * [getQuad](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getquad)
+
+Exit Function
 * [exitNormal](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#exitnormal)
 
 
 
 ### printReg
-#### print the value in the RDI register
+#### Description: 	print the value in the RDI register
+#### Preconditions: 	the value to be displayed must be in rdi 
+#### Postconditions: 	the value in rdi is displayed in the format 0xAABBCCDDEEFF1122
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
+
 example: 
  ```
 ; Data
 section 	.data
 extern printReg
+extern exitNormal
 
 ; Code 
 section		.text
-	
+   
 global _start
 
 _start:
 
-	mov rdi, 0x1234567890ABCD
-	call printReg
+   mov rdi, 0x1234567890abcd
+   call printReg
+   call exitNormal
   ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
   
 ### printRAX
-#### print the value in the RAX register
+#### Description:	print the value in the RAX register
+#### Preconditions: 	the value to be displayed must be in rax 
+#### Postconditions: 	the value in rax is displayed in the format 0xAABBCCDDEEFF1122
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 example:
  ```
 ; Data
@@ -56,19 +76,24 @@ global _start
 _start:
 	mov rax, 0x1234567890ABCD
 	call printRAX
+	call exitNormal
   ```
     output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
 
 ### printRBX
-#### print the value in the RBX register
+#### Description:	print the value in the RBX register
+#### Preconditions: 	the value to be displayed must be in rbx 
+#### Postconditions: 	the value in rbx is displayed in the format 0xAABBCCDDEEFF1122
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 example:
  ```
 ; Data
 section 	.data
 extern printRBX
+extern exitNormal
 
 ; Code 
 section		.text
@@ -79,19 +104,24 @@ _start:
 
 	mov rbx, 0x1234567890ABCD
 	call printRBX
+	call exitNormal
  ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
 
 ### printRCX
-#### print the value in the RCX register
+#### Description:	print the value in the RCX register
+#### Preconditions: 	the value to be displayed must be in rcx 
+#### Postconditions: 	the value in rcx is displayed in the format 0xAABBCCDDEEFF1122
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 example:
  ```
 ; Data
 section 	.data
 extern printRCX
+extern exitNormal
 
 ; Code 
 section		.text
@@ -102,19 +132,24 @@ _start:
 
 	mov rcx, 0x1234567890ABCD
 	call printRCX
+	call exitNormal
   ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD
   ```
   
 ### printRDX
-#### print the value in the RDX register
+#### Description:	print the value in the RDX register
+#### Preconditions: 	the value to be displayed must be in rdx
+#### Postconditions: 	the value in rdx is displayed in the format 0xAABBCCDDEEFF1122
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 example:
  ```
 ; Data
 section 	.data
 extern printRDX
+extern exitNormal
 
 ; Code 
 section		.text
@@ -125,19 +160,26 @@ _start:
 
 	mov rdx, 0x1234567890ABCD
 	call printRDX
+	call exitNormal
   ```
   output:
   ```
-  0x1234567890abcd
+  0x1234567890ABCD:w
+  
   ```
 
 ### printABCD
-#### print the value in the RAX, RBX, RAX and RDX registers
+#### Description:	print the value in the RAX, RBX, RAX and RDX registers
+#### Preconditions: 	the value to be displayed must be in rax, rbx, rcx and rdx registers
+#### Postconditions: 	the value in rax, rbx, rcx and rdx are displayed in the format 0xAABBCCDDEEFF1122
+####			a endline is printed after each register is printed
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 example:
  ```
 ; Data
 section 	.data
 extern printABCD
+extern exitNormal
 
 ; Code 
 section		.text
@@ -150,6 +192,7 @@ _start:
 	mov rcx, 0xCCCC
 	mov rdx, 0xDDDD
 	call printABCD
+	call exitNormal
   ```
   output:
   ```
@@ -160,7 +203,11 @@ _start:
   ```
 
 ### printMSG
-#### print the message associated with the value in RDI
+#### Description:	print the message associated with the value in RDI
+#### Preconditions: 	the value to be displayed must be in rdi
+#### Postconditions: 	the message cooresponding to the value in rdi is displayed as indicated below
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
+
 ##### 0x0  0XA (ENDL)
 ##### 0x1  MOV
 ##### 0x2  ADD
@@ -190,6 +237,7 @@ example:
 ; Data
 section 	.data
 extern printMSG
+extern exitNormal
 
 ; Code 
 section		.text
@@ -200,21 +248,25 @@ _start:
 
     mov rdi, 0x1
     call printMSG
+    call exitNormal
   ```
- output:
+ output: (No Carriage Return / Line Feed)
   ```
   MOV
   ```
 
 
 ### printEndl
-#### print the endline character
-
+#### Description:	print the endline character
+#### Preconditions: 	None
+#### Postconditions: 	an endline is printed
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 example:
  ```
 ; Data
 section 	.data
 extern printEndl
+extern exitNormal
 
 ; Code 
 section		.text
@@ -224,21 +276,26 @@ global _start
 _start:
 
     call printEndl
+    call exitNormal
   ```
- output:
+ output: (A blank Line)
   ```
   
   ```
 
 
 ### printSpace
-#### print a space character
+#### Description:	print the space character
+#### Preconditions: 	None
+#### Postconditions: 	a space is printed
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 
 example:
  ```
 ; Data
 section 	.data
 extern printSpace
+extern exitNormal
 
 ; Code 
 section		.text
@@ -248,12 +305,19 @@ global _start
 _start:
 
     call printSpace
+    call exitNormal
   ```
- output:
+ output: (a space, but no return)
   ```
    
   ```
 ### getQuad
+#### Description:	get a Quad Word from the user and put the result in RAX
+#### 			the user will type in characters 0-9,a-f,A-F. 
+#### Preconditions: 	None
+#### Postconditions: 	rax contains the value entered by the user up to 16 characters translated into hex from ASCII
+#### 			Registers rbx, rcx, rdx, rsi and rdi are unchanged after the call
+#### 			rax contains the value input by the user translated into a quad word
 ```
 ; Data
 section 	.data
@@ -287,9 +351,94 @@ Enter up to a quadword in hex: example:ABCDEF12345678
 0x000000123456ABCD
 ```
 
+### getByteArray
+#### Description:	bytes are placed in memory starting at the address pointed to by the RSI Register
+#### Preconditions: 	a byte array must exist large enough to hold the values input by the user
+#### 			rsi must point to the address of the byte array to fill
+####			rdx must contain the value of the number of characters to read into the byte buffer 
+#### Postconditions: 	The byte array pointed to by the rdi will contain the characters input by the user in ASCII 
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
+```
+; Data
+section 	.data
+extern getByteArray
+extern printByteArray
+extern printEndl
+extern exitNormal
+array	 	db	"Input 16 bytes  "
+numberOfBytes	dq	0x10
+
+
+; Code 
+section		.text
+
+global _start
+_start:
+
+	; printByteArray 
+	mov rsi, array	 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; print this many bytes of the array, value not address
+	call printByteArray		; print the array
+	call printEndl
+	
+	; getByteArray 
+	mov rsi, array	 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; get this many bytes of the array, value not address
+	call getByteArray		; get the array
+	
+	; printByteArray 
+	mov rsi, array	 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; print this many bytes of the array, value not address
+	call printByteArray		; print the array
+	call printEndl
+	
+	call	exitNormal
+```
+```
+Input 16 bytes  
+abcdefghijklmnop
+abcdefghijklmnop
+```
+
+### printByteArray
+#### Description:	bytes are read from the memory address pointed to by the RSI Register and output to stdout
+#### Preconditions: 	a byte array must exist with the desired output
+#### 			rsi must point to the address of the byte array to read
+####			rdx must contain the value of the number of characters to write to stdout
+#### Postconditions: 	The byte array pointed to by the rdi will have been printed to stdout
+#### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
+```
+; Data
+section 	.data
+extern printByteArray
+extern printEndl
+extern exitNormal
+arrayToPrint	db	"Print This Array"
+numberOfBytes	dq	0x10
+
+; Code 
+section		.text
+
+global _start
+_start:
+	; printByteArray 
+	mov rsi, arrayToPrint 		; note moving the address not the value
+	mov rdx, [numberOfBytes]	; print this many bytes of the array, value not address
+	call printByteArray		; print the array
+	
+	call printEndl
+	call	exitNormal
+```
+ 
+output:
+```
+Print This Array
+```
 
 ### exitNormal
-#### Exit to Linux with returning 0
+#### Description:	Exit to Linux with returning 0
+#### Preconditions: 	None
+#### Postconditions: 	A 0 is returned and an exit executed, returning control to the operating system
 example:
  ```
 ; Data
@@ -305,4 +454,4 @@ _start:
 
 	call exitNormal
   ```
-
+output:  (None, but you will not get a Segmentation fault)
