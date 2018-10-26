@@ -22,8 +22,9 @@ Input Functions
 * [getByteArray](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getbytearray)
 * [getQuad](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getquad)
 
-Exit Function
+Misc Functions
 * [exitNormal](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#exitnormal)
+* [getRand](https://github.com/stuart-srjc/CS12-Labs/blob/master/cs12Lib/README.md#getrand)
 
 
 
