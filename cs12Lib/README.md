@@ -455,3 +455,28 @@ _start:
 	call exitNormal
   ```
 output:  (None, but you will not get a Segmentation fault)
+
+
+### getRand
+#### Description:	Get a pseudorandom number and place it in RAX
+#### Preconditions: 	None
+#### Postconditions: 	A pseudorandom number is in RAX (This is actually just the system clock, so not really random)
+example:
+ ```
+; Data
+section 	.data
+extern getRand
+
+; Code 
+section		.text
+	
+global _start
+
+_start:
+	call	getRand  
+	call 	printRAX	
+	call	exitNormal  
+```
+output:  N/A to getRand, but in the code example you should see RAX printed similar to 
+0x0001BD8516F63A51
+
