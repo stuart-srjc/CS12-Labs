@@ -1,19 +1,26 @@
 ; Data
 section 	.data
-extern printMSG
+extern printByteArray
+extern printEndl
 extern exitNormal
+helloMsg  db  "CS12"
+spacer    db  "                                                                 "
+helloLen  dq  60
 
+; BSS 
+section		.bss
+	
 ; Code 
 section		.text
 	
 global _start
 
 _start:
-	mov rdi, 0xd
-	call printMSG
-	
-	mov rdi, 0x0
-	call printMSG
-	
-	
+    ; print out the message
+    mov rdx, qword [helloLen]   ; load the length of the output
+    mov rsi, helloMsg           ; load the message
+    call printByteArray         ; print the message
+    call printEndl              ; print an endline
+
+	; exit with an exit code of 0
 	call	exitNormal
