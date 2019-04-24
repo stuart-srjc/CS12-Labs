@@ -8,7 +8,7 @@ functionLib.o: functionLib.asm
 	yasm -Worphan-labels -g dwarf2 -f elf64 functionLib.asm -l functionLib.lst
 
 testC: testC.o functionLib.o ../cs12Lib/cs12Lib.o 
-	 gcc -g -o testC testC.o ../cs12Lib/cs12Lib.o functionLib.o 
+	 gcc -no-pie -g -o testC testC.o ../cs12Lib/cs12Lib.o functionLib.o 
 
 clean: 
 	rm -f function
