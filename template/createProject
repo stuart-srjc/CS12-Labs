@@ -8,6 +8,8 @@ then
 
     echo copying Makefile
     sed "s/template/$1/g" Makefile > ../$1/Makefile
+    cd ../$1
+    exec bash
 
 else
     echo
