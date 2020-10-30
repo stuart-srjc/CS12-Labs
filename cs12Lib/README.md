@@ -357,7 +357,7 @@ Enter up to a quadword in hex: example:ABCDEF12345678
 #### Preconditions: 	a byte array must exist large enough to hold the values input by the user
 #### 			rsi must point to the address of the byte array to fill
 ####			rdx must contain the value of the number of characters to read into the byte buffer 
-#### Postconditions: 	The byte array pointed to by the rdi will contain the characters input by the user in ASCII 
+#### Postconditions: 	The byte array pointed to by the rsi will contain the characters input by the user in ASCII
 #### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 ```
 ; Data
@@ -406,7 +406,7 @@ abcdefghijklmnop
 #### Preconditions: 	a byte array must exist with the desired output
 #### 			rsi must point to the address of the byte array to read
 ####			rdx must contain the value of the number of characters to write to stdout
-#### Postconditions: 	The byte array pointed to by the rdi will have been printed to stdout
+#### Postconditions: 	The byte array pointed to by the rsi will have been printed to stdout
 #### 			Registers rax, rbx, rcx, rdx, rsi and rdi are unchanged after the call
 ```
 ; Data
